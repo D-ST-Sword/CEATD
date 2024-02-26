@@ -56,7 +56,7 @@ class fineAudioEncoder(nn.Module):
 class coarseAudioEncoder(nn.Module):
     def __init__(self, output_dim):
         super(coarseAudioEncoder, self).__init__()
-        self.biLSTM = nn.LSTM(74, output_dim , num_layers=5, bidirectional=True,dropout=0.85    )  
+        self.biLSTM = nn.LSTM(74, output_dim , num_layers=5, bidirectional=True,dropout=0.85)  
         
 
     def forward(self, audio):   
