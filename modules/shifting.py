@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from model.CEATD.modules.align import transpose2D
+from ..modules.align import transpose2D
 
 class ATD_shifting(nn.Module):
     def __init__(self):
