@@ -63,11 +63,11 @@ class SAGU(nn.Module):
         self.output_dim = output_dim
         self.top_k = top_k
 
-        self.weight_fc_fine = nn.Linear(embedding_dim[0], 128) 
-        self.weight_fc_coarse = nn.Linear(embedding_dim[1], 128)
+        self.weight_fc_fine = nn.Linear(embedding_dim, 128) 
+        self.weight_fc_coarse = nn.Linear(embedding_dim, 128)
 
-        self.fine_linear = nn.Linear(embedding_dim[2], 128)
-        self.coarse_linear = nn.Linear(embedding_dim[3], 128)
+        self.fine_linear = nn.Linear(embedding_dim, 128)
+        self.coarse_linear = nn.Linear(embedding_dim, 128)
 
         self.fine_resizer = transpose2D([128,128])
         self.coarse_resizer = transpose2D([128,128])

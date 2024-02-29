@@ -5,29 +5,34 @@ import sklearn.manifold
 import matplotlib.pyplot as plt
 from sklearn.manifold import TSNE
 import numpy as np
-from ..CEATD.model.net import *
-from ..CEATD.modules.encoder import *
+from model.net import *
+from modules.encoder import *
 import time
 from torch.utils.data import random_split
 from torchsummary import summary
 from sklearn.metrics import f1_score
 import torch.nn.functional as F  
-from ..CEATD.train.train import train_model, contrast_train
+from train.train import train_model, contrast_train
 
-dataPath = '' # path to the data
+#dataPath = '' # path to the data
 
-loader= torch.load(dataPath)
+#loader= torch.load(dataPath)
 
-dataset_size = len(loader)
-train_size = int(0.8 * dataset_size)  # traning set takes 80%
-test_size = dataset_size - train_size  # test set takes 20%
+#dataset_size = len(loader)
+#train_size = int(0.8 * dataset_size)  # traning set takes 80%
+#test_size = dataset_size - train_size  # test set takes 20%
 # set random seed
 torch.manual_seed(1)
 
-train_dataset, test_dataset = random_split(loader, [train_size, test_size])
+#train_dataset, test_dataset = random_split(loader, [train_size, test_size])
 
-train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True, drop_last=True)
-test_loader = DataLoader(test_dataset, batch_size=32, shuffle=True, drop_last=True)
+#train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True, drop_last=True)
+#test_loader = DataLoader(test_dataset, batch_size=32, shuffle=True, drop_last=True)
+
+#model = baseMultiModel(input_dim=240, embedding_dim=300, output_dim=240)
+
+#print(model)
+
 '''
 # Hyperparameters for demo
 embedding_dim = 300  # Example word embedding dimension
@@ -51,7 +56,7 @@ Loss = nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 epochs = 10
 # Train the basemodel
-train_model(basemodel, train_loader, test_loader, device, Loss, optimizer, epochs)
+#train_model(basemodel, train_loader, test_loader, device, Loss, optimizer, epochs)
 
 
 #use contrast model
@@ -67,5 +72,8 @@ contrastmodel = contrastMultiModel(fineTextEncoder(input_dim, embedding_dim=embe
                         k=k)
 
 # Train the contrastmodel
-contrast_train(contrastmodel, train_loader, optimizer, Loss)
+#contrast_train(contrastmodel, train_loader, optimizer, Loss)
 '''
+
+
+

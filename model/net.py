@@ -1,6 +1,6 @@
-from CEATD.modules.align import *
-from CEATD.modules.shifting import *
-from CEATD.modules.encoder import *
+from modules.align import *
+from modules.shifting import *
+from modules.encoder import *
 
 import torch
 import torch.nn as nn

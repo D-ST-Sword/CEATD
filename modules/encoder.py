@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from ..modules.align import *
+from modules.align import *
 
 class fineTextEncoder(nn.Module):
     def __init__(self, vocab_size, embedding_dim, output_dim):
@@ -20,7 +20,7 @@ class coarseTextEncoder(nn.Module):
         super(coarseTextEncoder, self).__init__()
         
         
-        self.transformer_encoder_layer = nn.TransformerEncoderLayer(d_model=input_dim, nhead=8)
+        self.transformer_encoder_layer = nn.TransformerEncoderLayer(d_model=input_dim, nhead=2)
         self.transformer_encoder = nn.TransformerEncoder(self.transformer_encoder_layer, num_layers=4)
         
         
@@ -56,7 +56,7 @@ class fineAudioEncoder(nn.Module):
 class coarseAudioEncoder(nn.Module):
     def __init__(self, output_dim):
         super(coarseAudioEncoder, self).__init__()
-        self.biLSTM = nn.LSTM(74, output_dim , num_layers=5, bidirectional=True,dropout=0.85)  
+        self.biLSTM = nn.LSTM(74, output_dim , num_layers=5, bidirectional=True,dropout=0.85    )  
         
 
     def forward(self, audio):   
